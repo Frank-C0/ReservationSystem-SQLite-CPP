@@ -16,18 +16,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    CReservSystem/creservsystem.cpp \
-    CReservSystem/model/reserva.cpp \
-    ReservationGUI/reservationmainwindow.cpp \
-    main.cpp
+    src/CReservSystem/creservsystem.cpp \
+    src/CReservSystem/model/reserva.cpp \
+    src/ReservationGUI/reservationmainwindow.cpp \
+    src/main.cpp
 
 HEADERS += \
-    CReservSystem/creservsystem.h \
-    CReservSystem/model/reserva.h \
-    ReservationGUI/reservationmainwindow.h
+    src/CReservSystem/creservsystem.h \
+    src/CReservSystem/model/reserva.h \
+    src/ReservationGUI/reservationmainwindow.h
 
 FORMS += \
-    ReservationGUI/reservationmainwindow.ui
+    src/ReservationGUI/reservationmainwindow.ui
 
 QT += sql
 
@@ -38,3 +38,7 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+MOC_DIR     = ./build/moc
+OBJECTS_DIR = ./build/obj
+RCC_DIR     = ./build/qrc
+UI_DIR      = ./build/uic
